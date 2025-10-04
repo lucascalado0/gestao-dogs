@@ -1,12 +1,37 @@
 package com.example.gestao_dogs.model;
 
+import jakarta.persistence.*;
+import lombok.Data;
+
 import java.util.List;
 
-public class Tutor {
+@Data
+@Entity(name = "Guardian")
+@Table(name = "tb_guardian")
+public class Guardian {
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @Column(name = "guardian_id")
     private Long id;
-    private String nome;
-    private String telefone;
+
+    @Column(nullable = false, length = 100)
+    private String name;
+
+    @Column(name = "last_name", nullable = false, length = 100)
+    private String lastName;
+
+    @Column(nullable = false, length = 15)
+    private String phone;
+
+    @Column(nullable = false, length = 100)
     private String email;
-    private TutorAdress endereco;
+
+    @Embedded
+    @Column
+    private GuardianAdress address;
+
+    @OneToMany(mappedBy = "guardian", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Pets> pets;
+
 }
