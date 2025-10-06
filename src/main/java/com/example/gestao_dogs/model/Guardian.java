@@ -21,6 +21,9 @@ public class Guardian {
     @Column(name = "last_name", nullable = false, length = 100)
     private String lastName;
 
+    @Column(nullable = false, length = 15, unique = true)
+    private String cpf;
+
     @Column(nullable = false, length = 15)
     private String phone;
 
