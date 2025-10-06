@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @Entity(name = "Pets")
@@ -36,4 +37,7 @@ public class Pets {
 
     @Column(length = 500)
     private String observations;
+
+    @ManyToMany(mappedBy = "pets")
+    private List<Service> services;
 }
