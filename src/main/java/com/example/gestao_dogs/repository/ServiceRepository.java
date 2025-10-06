@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ServiceRepository extends JpaRepository<Service, Long> {
-    List<Service> findByServiceType(String serviceType);
+    List<Service>findByServiceType(String serviceType);
     List<Service>findByStatusPayment(String statusPayment);
-    List<Service>findByDateBetween(LocalDate startDate, LocalDate endDate);
+    List<Service>findByInitialDateBetween(LocalDate initialDate, LocalDate endDate);
 }
