@@ -11,8 +11,8 @@ import java.util.List;
 
 @Repository
 public interface PetsRepository extends JpaRepository<Pets, Long> {
-    List<Pets>findByGuardian(Guardian guardian);
-    List<Pets>findByContainingNameIgnoreCase(String name);
+    List<Pets>findByGuardianName(String name);
+    List<Pets> findByNameIgnoreCase(String name);
     List<Pets>findByBreedIgnoreCase(String breed);
     List<Pets>findByServicesContaining(Service service);
 }
