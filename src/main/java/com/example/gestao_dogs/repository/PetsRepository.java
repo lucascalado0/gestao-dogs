@@ -1,8 +1,7 @@
 package com.example.gestao_dogs.repository;
 
-import com.example.gestao_dogs.model.Guardian;
-import com.example.gestao_dogs.model.Pets;
-import com.example.gestao_dogs.model.Service;
+import com.example.gestao_dogs.models.Pets;
+import com.example.gestao_dogs.models.Service;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
